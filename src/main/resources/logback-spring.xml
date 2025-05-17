@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Define a log file path variable -->
+    <property name="LOG_PATH" value="logs" />
+
+    <!-- Rolling File Appender with Time and Size Based Policy -->
+    <appender name="ROLLING-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/application.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- File name pattern with date and index -->
+            <fileNamePattern>${LOG_PATH}/currency-exchange-service-application-%d{yyyy-MM-dd_HH-mm-ss}.%i.log</fileNamePattern>
+
+            <!-- Max size per log file -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>2KB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+
+            <!-- How many days to keep logs -->
+            <maxHistory>30</maxHistory>
+
+            <!-- Total size cap across all history files -->
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Logger for specific package -->
+    <logger name="com.in28minutes.microservices.currency_exchange_service" level="DEBUG" additivity="false">
+        <appender-ref ref="ROLLING-FILE" />
+    </logger>
+
+    <!-- Root logger (optional fallback) -->
+    <root level="INFO">
+        <appender-ref ref="ROLLING-FILE" />
+    </root>
+
+</configuration>
