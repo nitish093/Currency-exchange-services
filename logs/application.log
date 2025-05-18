@@ -1,0 +1,6 @@
+2025-05-19 01:24:44 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8000"]
+2025-05-19 01:24:44 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8000 (http) with context path '/'
+2025-05-19 01:24:44 INFO  [main] c.e.c.c.CurrencyExchangeServiceApplication - Started CurrencyExchangeServiceApplication in 10.485 seconds (process running for 11.68)
+2025-05-19 01:24:44 INFO  [RMI TCP Connection(3)-192.168.1.12] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 01:24:44 INFO  [RMI TCP Connection(3)-192.168.1.12] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-19 01:24:44 INFO  [RMI TCP Connection(3)-192.168.1.12] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
